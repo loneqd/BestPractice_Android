@@ -4,3 +4,8 @@
 /*.iml
 */*/*.iml
 /build!/.idea/
+/build/*.*
+/.idea/*.*!/.idea/gradle.xml
+!/.idea/misc.xml
+/.idea/
+/.idea/*.*
