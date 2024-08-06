@@ -4,6 +4,17 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/../node_modules/@react-native/gradle-plugin" name="react-native-gradle-plugin">
+                <projects>
+                  <project path="$PROJECT_DIR$/../node_modules/@react-native/gradle-plugin" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleJvm" value="jbr-17" />
         <option name="modules">
@@ -13,7 +24,9 @@
             <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/rn" />
             <option value="$PROJECT_DIR$/utils" />
+            <option value="$PROJECT_DIR$/../node_modules/@react-native/gradle-plugin" />
             <option value="$PROJECT_DIR$/../node_modules/react-native-blob-util/android" />
+            <option value="$PROJECT_DIR$/../node_modules/react-native-permissions/android" />
             <option value="$PROJECT_DIR$/../node_modules/react-native-safe-area-context/android" />
             <option value="$PROJECT_DIR$/../node_modules/react-native-screens/android" />
           </set>

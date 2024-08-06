@@ -13,6 +13,8 @@ import java.util.Collections;
 import java.util.List;
 
 import com.lqd.rn.manager.MyReactImageManager;
+import com.lqd.rn.manager.MyTextViewManager;
+import com.lqd.rn.manager.MyWebViewManager;
 import com.lqd.rn.modules.IndexModule;
 
 public class IndexPackage implements ReactPackage {
@@ -27,7 +29,10 @@ public class IndexPackage implements ReactPackage {
     @NonNull
     @Override
     public List<ViewManager> createViewManagers(@NonNull ReactApplicationContext reactContext) {
-        Arrays.<ViewManager>asList(new MyReactImageManager(reactContext));
-        return Collections.emptyList();
+        List<ViewManager> modules = new ArrayList<>();
+        modules.add(new MyReactImageManager(reactContext));
+        modules.add(new MyTextViewManager(reactContext));
+        modules.add(new MyWebViewManager(reactContext));
+        return modules;
     }
 }

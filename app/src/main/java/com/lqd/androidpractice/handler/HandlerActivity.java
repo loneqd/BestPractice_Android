@@ -70,6 +70,12 @@ public class HandlerActivity extends Activity {
                     msg.obj = "A"; // 消息内存存放
                     myHandler.sendMessage(msg); // 异步线程发送消息
 
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
                     Message msg2 = Message.obtain();
                     msg2.what = 2; // 消息标识
                     msg2.obj = "BB"; // 消息内存存放
@@ -81,17 +87,19 @@ public class HandlerActivity extends Activity {
                         e.printStackTrace();
                     }
 
-                    Log.d(TAG, Thread.currentThread().getStackTrace()[2].getMethodName());
+                    Log.d(TAG, ">>>" + Thread.currentThread().getStackTrace()[2].getMethodName());
 
                     //使用post
                     myHandler.post(new Runnable() {
                         @Override
                         public void run() {
                             //回到UI线程
+                            Log.d(TAG, ">>>" + Thread.currentThread().getName());
+                            textView.setText("reset");
                         }
                     });
 
-                    HandlerActivity.this.finish();
+//                    HandlerActivity.this.finish();
                 }
             }.start();
 
@@ -122,8 +130,8 @@ public class HandlerActivity extends Activity {
         public void handleMessage(@NonNull @NotNull Message msg) {
             super.handleMessage(msg);
 
-            Log.d(TAG, Thread.currentThread().getStackTrace()[2].getMethodName());
-            Log.d(TAG, msg.toString());
+            Log.d(TAG, ">>>" + Thread.currentThread().getStackTrace()[2].getMethodName());
+            Log.d(TAG, ">>>" + msg.toString());
             HandlerActivity activity = activityWeakReference.get();
             Log.d(TAG, "handleMessage" + activity);
             if (activity == null)

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContext;
@@ -18,11 +19,16 @@ import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewProps;
 import com.facebook.react.uimanager.annotations.ReactProp;
+import com.facebook.react.uimanager.events.RCTEventEmitter;
 import com.facebook.react.views.image.ImageResizeMode;
 import com.facebook.react.views.image.ReactImageView;
 
 import java.util.Map;
 
+
+/**
+ * 原生UI组件
+ */
 public class MyReactImageManager extends SimpleViewManager<ReactImageView> {
 
     public static final String REACT_CLASS = "RCTImageView";
@@ -42,7 +48,13 @@ public class MyReactImageManager extends SimpleViewManager<ReactImageView> {
     @NonNull
     @Override
     protected ReactImageView createViewInstance(@NonNull ThemedReactContext reactContext) {
-        return new ReactImageView(reactContext, Fresco.newDraweeControllerBuilder(), null, mCallerContext);
+        ReactImageView imageView = new ReactImageView(reactContext, Fresco.newDraweeControllerBuilder(), null, mCallerContext);
+        imageView.setOnClickListener(v -> {
+            WritableMap data = Arguments.createMap();
+            data.putString("msg", "点击了图片");
+            mCallerContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("onClick", data);
+        });
+        return imageView;
     }
 
     @ReactProp(name = "src")
@@ -60,6 +72,12 @@ public class MyReactImageManager extends SimpleViewManager<ReactImageView> {
         view.setScaleType(ImageResizeMode.toScaleType(resizeMode));
     }
 
+
+    @Nullable
+    @Override
+    public Map<String, Integer> getCommandsMap() {
+        return super.getCommandsMap();
+    }
 
     @Nullable
     @Override

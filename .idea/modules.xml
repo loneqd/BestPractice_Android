@@ -15,6 +15,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1768569432/android.react-native-blob-util.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-1768569432/android.react-native-blob-util.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1768569432/android.react-native-blob-util.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1768569432/android.react-native-blob-util.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1768569432/android.react-native-blob-util.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-1768569432/android.react-native-blob-util.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/990477946/android.react-native-permissions.iml" filepath="$PROJECT_DIR$/.idea/modules/990477946/android.react-native-permissions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/990477946/android.react-native-permissions.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/990477946/android.react-native-permissions.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/990477946/android.react-native-permissions.main.iml" filepath="$PROJECT_DIR$/.idea/modules/990477946/android.react-native-permissions.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/990477946/android.react-native-permissions.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/990477946/android.react-native-permissions.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1427487451/android.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/-1427487451/android.react-native-safe-area-context.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1427487451/android.react-native-safe-area-context.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/-1427487451/android.react-native-safe-area-context.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1427487451/android.react-native-safe-area-context.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1427487451/android.react-native-safe-area-context.main.iml" />
@@ -31,6 +35,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/utils/android.utils.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/utils/android.utils.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/utils/android.utils.main.iml" filepath="$PROJECT_DIR$/.idea/modules/utils/android.utils.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/utils/android.utils.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/utils/android.utils.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/601835601/react-native-gradle-plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/601835601/react-native-gradle-plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/601835601/react-native-gradle-plugin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/601835601/react-native-gradle-plugin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/601835601/react-native-gradle-plugin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/601835601/react-native-gradle-plugin.test.iml" />
     </modules>
   </component>
 </project>

@@ -168,6 +168,11 @@ public class MainActivity extends BaseActivity {
             MainActivity.this.startActivity(intent);
         });
 
+        findViewById(R.id.handlerActivityBtn).setOnClickListener(view1 -> {
+            Intent intent = new Intent(MainActivity.this, com.lqd.androidpractice.handler.HandlerActivity.class);
+            MainActivity.this.startActivity(intent);
+        });
+
 
 
     }
