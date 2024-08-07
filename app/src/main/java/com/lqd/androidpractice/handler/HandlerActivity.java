@@ -129,26 +129,23 @@ public class HandlerActivity extends Activity {
         @Override
         public void handleMessage(@NonNull @NotNull Message msg) {
             super.handleMessage(msg);
-
             Log.d(TAG, ">>>" + Thread.currentThread().getStackTrace()[2].getMethodName());
             Log.d(TAG, ">>>" + msg.toString());
             HandlerActivity activity = activityWeakReference.get();
-            Log.d(TAG, "handleMessage" + activity);
+            Log.d(TAG, "handleMessage  " + activity);
             if (activity == null)
                 return;
 
             switch (msg.what) {
                 case 1:
-                    activity.textView.setText("执行了线程1的UI操作");
+                    activity.textView.setText(Thread.currentThread().getName() + "执行了线程1的UI操作");
                     break;
                 case 2:
-                    activity.textView.setText("执行了线程2的UI操作");
+                    activity.textView.setText(Thread.currentThread().getName() + "执行了线程2的UI操作");
                     break;
             }
         }
     }
-
-    ;
 
 
 }

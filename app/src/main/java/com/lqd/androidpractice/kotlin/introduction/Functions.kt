@@ -4,6 +4,10 @@ fun printMessage(message: String): Unit {                               // 1
     println(message)
 }
 
+
+/**
+ * 参数默认值
+ */
 fun printMessageWithPrefix(message: String, prefix: String = "Info") {  // 2
     println("[$prefix] $message")
 }

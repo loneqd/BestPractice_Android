@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.lqd.androidpractice.activity.UIExampleActivity;
 import com.lqd.androidpractice.lifecycle.LaunchActivity1;
 import com.lqd.androidpractice.view.RadiusProgressBar;
 import com.lqd.base.activity.BaseActivity;
@@ -60,7 +61,7 @@ public class MainActivity extends BaseActivity {
             if (msg.what == UPDATE_UI) {
 
             } else if (msg.what == START) {
-//                requestAudioPermissions(MainActivity.this);
+                //                requestAudioPermissions(MainActivity.this);
             } else if (msg.what == STOP) {
                 if (audioRecordUtil != null) {
                     audioRecordUtil.stopRecord();
@@ -89,9 +90,10 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         String ua = System.getProperty("http.agent");
-//        TestView xxx = new TestView(getApplicationContext());
-//        xxx.invalidate();
+        //        TestView xxx = new TestView(getApplicationContext());
+        //        xxx.invalidate();
         Log.d(TAG, "onCreate" + ua);
         setContentView(R.layout.activity_main);
 
@@ -100,14 +102,21 @@ public class MainActivity extends BaseActivity {
         progressBar = findViewById(R.id.progress_bar);
         progressBar.setProgressBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.game_load_progress));
 
+        findViewById(R.id.handler1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Message message = new Message();
+                message.what = START;
+                handler.sendMessage(message);
+                //                startRecordAudio();
+            }
+        });
+
         btn1 = findViewById(R.id.start);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Message message = new Message();
-//                message.what = START;
-//                handler.sendMessage(message);
-//                startRecordAudio();
+
                 Toast.makeText(MainActivity.this, "jaja", Toast.LENGTH_SHORT).show();
             }
         });
@@ -115,16 +124,16 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 stopRecord();
-//                Message message = new Message();
-//                message.what = STOP;
-//                handler.sendMessage(message);
-//                handler.post(new Runnable() {
-//
-//                    @Override
-//                    public void run() {
-//                        btn1.setText("happy");
-//                    }
-//                });
+                //                Message message = new Message();
+                //                message.what = STOP;
+                //                handler.sendMessage(message);
+                //                handler.post(new Runnable() {
+                //
+                //                    @Override
+                //                    public void run() {
+                //                        btn1.setText("happy");
+                //                    }
+                //                });
             }
         });
 
@@ -141,7 +150,7 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.btn4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                play();
+                //                play();
                 test();
             }
         });
@@ -173,34 +182,43 @@ public class MainActivity extends BaseActivity {
             MainActivity.this.startActivity(intent);
         });
 
+        findViewById(R.id.uiBtn).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, UIExampleActivity.class);
+            MainActivity.this.startActivity(intent);
+        });
+
+        findViewById(R.id.carouseBtn).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, com.lqd.androidpractice.activity.CarouseActivity.class);
+            MainActivity.this.startActivity(intent);
+        });
 
 
     }
 
     private void interval() {
-//        Observable.interval(500, TimeUnit.MILLISECONDS).observeOn(AndroidSchedulers.mainThread())
-//                        .subscribe(new Observer<Long>() {
-//                            @Override
-//                            public void onSubscribe(@NotNull Disposable d) {
-//
-//                            }
-//
-//                            @Override
-//                            public void onNext(@NotNull Long aLong) {
-//                                progressBar.setProgress(percent);
-//                                percent += 1;
-//                            }
-//
-//                            @Override
-//                            public void onError(@NotNull Throwable e) {
-//
-//                            }
-//
-//                            @Override
-//                            public void onComplete() {
-//
-//                            }
-//                        });
+        //        Observable.interval(500, TimeUnit.MILLISECONDS).observeOn(AndroidSchedulers.mainThread())
+        //                        .subscribe(new Observer<Long>() {
+        //                            @Override
+        //                            public void onSubscribe(@NotNull Disposable d) {
+        //
+        //                            }
+        //
+        //                            @Override
+        //                            public void onNext(@NotNull Long aLong) {
+        //                                progressBar.setProgress(percent);
+        //                                percent += 1;
+        //                            }
+        //
+        //                            @Override
+        //                            public void onError(@NotNull Throwable e) {
+        //
+        //                            }
+        //
+        //                            @Override
+        //                            public void onComplete() {
+        //
+        //                            }
+        //                        });
     }
 
 
@@ -222,7 +240,7 @@ public class MainActivity extends BaseActivity {
         layoutParams.topMargin = 300;
         view.setLayoutParams(layoutParams);
         view.requestLayout();
-//        view.setTranslationX(50);
+        //        view.setTranslationX(50);
 
 
         int viewWidth = view.getLayoutParams().width;
@@ -232,13 +250,13 @@ public class MainActivity extends BaseActivity {
         ObjectAnimator stageOneAnimator = ObjectAnimator.ofFloat(view, "translationX", endTranslation, startTranslation);
         stageOneAnimator.setDuration(3000);
         stageOneAnimator.start();
-//
-//        stageOneAnimator.addListener(new AnimatorListenerAdapter() {
-//            @Override
-//            public void onAnimationEnd(Animator animation, boolean isReverse) {
-//                Log.d("####", "enddddd");
-//            }
-//        });
+        //
+        //        stageOneAnimator.addListener(new AnimatorListenerAdapter() {
+        //            @Override
+        //            public void onAnimationEnd(Animator animation, boolean isReverse) {
+        //                Log.d("####", "enddddd");
+        //            }
+        //        });
 
 
     }
@@ -274,13 +292,12 @@ public class MainActivity extends BaseActivity {
         SUBJECTS.add("Java");
         SUBJECTS.add("Db");
         SUBJECTS.add("Spring");
-        Flowable.fromIterable(SUBJECTS)
-                .map(new Function<String, String>() {
-                    @Override
-                    public String apply(@NonNull String s) throws Exception {
-                        return "1234 " + s;
-                    }
-                }).subscribeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<String>() {
+        Flowable.fromIterable(SUBJECTS).map(new Function<String, String>() {
+            @Override
+            public String apply(@NonNull String s) throws Exception {
+                return "1234 " + s;
+            }
+        }).subscribeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<String>() {
             @Override
             public void accept(String s) throws Exception {
                 Log.e(TAG, s);
@@ -288,116 +305,116 @@ public class MainActivity extends BaseActivity {
         });
 
         // 使用操作符
-//        Flowable.create(e -> {e.onNext("111");
-//        e.onComplete();}, BackpressureStrategy.BUFFER).subscribe(new FlowableSubscriber<Object>() {
-//            @Override
-//            public void onSubscribe(@NonNull Subscription s) {
-//                Log.d(TAG, "onSubscribe " + Thread.currentThread().getName());
-//            }
-//
-//            @Override
-//            public void onNext(Object o) {
-//                Log.d(TAG, "onNext " + Thread.currentThread().getName());
-//            }
-//
-//            @Override
-//            public void onError(Throwable t) {
-//                Log.d(TAG, "onError " + Thread.currentThread().getName());
-//            }
-//
-//            @Override
-//            public void onComplete() {
-//                Log.d(TAG, "onComplete " + Thread.currentThread().getName());
-//            }
-//        });
-//                .map(new Function<String, Integer>() {
-//                    @Override
-//                    public Integer apply(@NonNull String s) throws Exception {
-//                        return 1;
-//                    }
-//                })
-//                .subscribe(new FlowableSubscriber<Integer>() {
-//                    @Override
-//                    public void onSubscribe(@NonNull Subscription s) {
-//                        Log.d(TAG, "onSubscribe " + Thread.currentThread().getName());
-//                    }
-//
-//                    @Override
-//                    public void onNext(Integer integer) {
-//                        Log.d(TAG, "onNext " + Thread.currentThread().getName() + "    " + integer);
-//                    }
-//
-//                    @Override
-//                    public void onError(Throwable t) {
-//                        Log.e(TAG, "onError");
-//                    }
-//
-//                    @Override
-//                    public void onComplete() {
-//                        Log.d(TAG, "onComplete " + Thread.currentThread().getName());
-//                    }
-//                });
+        //        Flowable.create(e -> {e.onNext("111");
+        //        e.onComplete();}, BackpressureStrategy.BUFFER).subscribe(new FlowableSubscriber<Object>() {
+        //            @Override
+        //            public void onSubscribe(@NonNull Subscription s) {
+        //                Log.d(TAG, "onSubscribe " + Thread.currentThread().getName());
+        //            }
+        //
+        //            @Override
+        //            public void onNext(Object o) {
+        //                Log.d(TAG, "onNext " + Thread.currentThread().getName());
+        //            }
+        //
+        //            @Override
+        //            public void onError(Throwable t) {
+        //                Log.d(TAG, "onError " + Thread.currentThread().getName());
+        //            }
+        //
+        //            @Override
+        //            public void onComplete() {
+        //                Log.d(TAG, "onComplete " + Thread.currentThread().getName());
+        //            }
+        //        });
+        //                .map(new Function<String, Integer>() {
+        //                    @Override
+        //                    public Integer apply(@NonNull String s) throws Exception {
+        //                        return 1;
+        //                    }
+        //                })
+        //                .subscribe(new FlowableSubscriber<Integer>() {
+        //                    @Override
+        //                    public void onSubscribe(@NonNull Subscription s) {
+        //                        Log.d(TAG, "onSubscribe " + Thread.currentThread().getName());
+        //                    }
+        //
+        //                    @Override
+        //                    public void onNext(Integer integer) {
+        //                        Log.d(TAG, "onNext " + Thread.currentThread().getName() + "    " + integer);
+        //                    }
+        //
+        //                    @Override
+        //                    public void onError(Throwable t) {
+        //                        Log.e(TAG, "onError");
+        //                    }
+        //
+        //                    @Override
+        //                    public void onComplete() {
+        //                        Log.d(TAG, "onComplete " + Thread.currentThread().getName());
+        //                    }
+        //                });
 
-//        Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
-//            @Override
-//            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-//                emitter.onNext(1);
-//                emitter.onNext(2);
-//                emitter.onNext(3);
-//                emitter.onComplete();
-//            }
-//        });
-//
-//        Observer<Integer> observer = new Observer<Integer>() {
-//            @Override
-//            public void onSubscribe(Disposable d) {
-//                Log.d(TAG, "subscribe");
-//            }
-//
-//            @Override
-//            public void onNext(Integer integer) {
-//                Log.d(TAG, "" + integer);
-//            }
-//
-//            @Override
-//            public void onError(Throwable e) {
-//                Log.d(TAG, "" + "error");
-//            }
-//
-//            @Override
-//            public void onComplete() {
-//                Log.d(TAG, "complete");
-//            }
-//        };
+        //        Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
+        //            @Override
+        //            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+        //                emitter.onNext(1);
+        //                emitter.onNext(2);
+        //                emitter.onNext(3);
+        //                emitter.onComplete();
+        //            }
+        //        });
+        //
+        //        Observer<Integer> observer = new Observer<Integer>() {
+        //            @Override
+        //            public void onSubscribe(Disposable d) {
+        //                Log.d(TAG, "subscribe");
+        //            }
+        //
+        //            @Override
+        //            public void onNext(Integer integer) {
+        //                Log.d(TAG, "" + integer);
+        //            }
+        //
+        //            @Override
+        //            public void onError(Throwable e) {
+        //                Log.d(TAG, "" + "error");
+        //            }
+        //
+        //            @Override
+        //            public void onComplete() {
+        //                Log.d(TAG, "complete");
+        //            }
+        //        };
 
-//        observable.subscribe(observer);
+        //        observable.subscribe(observer);
 
 
-//        Observable<Integer> observable1 = Observable.create(new ObservableOnSubscribe<Integer>() {
-//            @Override
-//            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-//                emitter.onNext(1);
-//                Log.d(TAG, Thread.currentThread().getName());
-//                Log.d(TAG, "emit 1");
-//            }
-//        });
-//
-//        Consumer<Integer> consumer = new Consumer<Integer>() {
-//            @Override
-//            public void accept(Integer integer) throws Exception {
-//                Log.d(TAG, "onNext " + integer);
-//                Log.d(TAG, Thread.currentThread().getName());
-//            }
-//        };
-//
-////        observable1.subscribeOn(Schedulers.newThread())
-////                .observeOn(AndroidSchedulers.mainThread())
-////                .subscribe(consumer);
-//
-////        Integer[] items = {1, 2, 3, 4, 5};
-////        Observable myObservable = Observable.fromArray(items);
-//
-//
+        //        Observable<Integer> observable1 = Observable.create(new ObservableOnSubscribe<Integer>() {
+        //            @Override
+        //            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
+        //                emitter.onNext(1);
+        //                Log.d(TAG, Thread.currentThread().getName());
+        //                Log.d(TAG, "emit 1");
+        //            }
+        //        });
+        //
+        //        Consumer<Integer> consumer = new Consumer<Integer>() {
+        //            @Override
+        //            public void accept(Integer integer) throws Exception {
+        //                Log.d(TAG, "onNext " + integer);
+        //                Log.d(TAG, Thread.currentThread().getName());
+        //            }
+        //        };
+        //
+        ////        observable1.subscribeOn(Schedulers.newThread())
+        ////                .observeOn(AndroidSchedulers.mainThread())
+        ////                .subscribe(consumer);
+        //
+        ////        Integer[] items = {1, 2, 3, 4, 5};
+        ////        Observable myObservable = Observable.fromArray(items);
+        //
+        //
 
 
     }

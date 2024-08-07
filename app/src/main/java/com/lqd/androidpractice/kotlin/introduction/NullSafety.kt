@@ -8,7 +8,12 @@ fun main() {
 
     var nullable: String? = "You can keep a null here"
 
+    nullable!!.length
+
     nullable = null
+
+    var xx = nullable ?: "123"
+    print(xx)
 
     var inferredNonNull = "The compiler assumes non-null"
 

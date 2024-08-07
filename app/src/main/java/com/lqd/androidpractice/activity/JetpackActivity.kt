@@ -1,6 +1,8 @@
 package com.lqd.androidpractice.activity
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
+import android.database.Cursor
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -66,17 +68,26 @@ class JetpackActivity : BaseActivity() {
         Toast.makeText(baseContext, "New Record Inserted", Toast.LENGTH_LONG).show()
     }
 
+    @SuppressLint("Range")
     fun onClickShowDetails(view: View?) {
         // Retrieve employee records
         val resultView = findViewById<View>(R.id.res) as TextView
-        val cursor = contentResolver.query(Uri.parse("content://com.lqd.androidpractice.provider.UsersProvider/users"), null, null, null, null)
+        val cursor: Cursor? = contentResolver.query(
+            Uri.parse("content://com.lqd.androidpractice.provider.UsersProvider/users"),
+            null,
+            null,
+            null,
+            null
+        )
         if (cursor!!.moveToFirst()) {
             val strBuild = StringBuilder()
-            while (!cursor!!.isAfterLast) {
-                strBuild.append("""
+            while (!cursor.isAfterLast) {
+                strBuild.append(
+                    """
     
     ${cursor!!.getString(cursor!!.getColumnIndex("id"))}-${cursor!!.getString(cursor.getColumnIndex("name"))}
-    """.trimIndent())
+    """.trimIndent()
+                )
                 cursor!!.moveToNext()
             }
             resultView.text = strBuild

@@ -13,6 +13,12 @@
         >
 
         <Button
+            android:id="@+id/handler1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Handler测试1" />
+
+        <Button
             android:id="@+id/start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,6 +67,15 @@
             android:id="@+id/handlerActivityBtn"
             android:text="Handler Activity" />
 
+        <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/uiBtn"
+            android:text="UI Test" />
+
+        <Button android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/carouseBtn"
+            android:text="Carouse" />
 
     </GridLayout>
 

@@ -2,7 +2,7 @@ package com.lqd.androidpractice.kotlin.collections
 
 fun main() {
     testAll()
-    testAll()
+    testAny()
     testNone()
 }
 

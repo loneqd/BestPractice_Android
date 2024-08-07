@@ -3,6 +3,13 @@ package com.lqd.androidpractice.kotlin.collections
 fun main() {
     val numbers = listOf(1, -2, 3, -4, 5, -6)     // 1
 
+    val x = mutableListOf<Int>()
+    x.add(1)
+    x.add(2)
+    println(x)
+    println(">>>>>>>>>>")
+
+
     val doubled = numbers.map { x -> x * 2 }      // 2
 
     val tripled = numbers.map { it * 3 }

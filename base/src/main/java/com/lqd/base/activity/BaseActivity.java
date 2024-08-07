@@ -26,8 +26,8 @@ public class BaseActivity extends Activity {
     }
 
     protected void initHandler() {
-        Handler _hanlder = new Handler();
-        mHandler = new WeakReference<>(_hanlder);
+        Handler _handler = new Handler();
+        mHandler = new WeakReference<>(_handler);
     }
 
     @Override
