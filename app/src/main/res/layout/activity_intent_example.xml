@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.IntentExampleActivity">
+
+    <ScrollView
+        android:layout_width="395dp"
+        android:layout_height="715dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/actionInsertBtn"
+                android:text="添加日历"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <Button
+                android:id="@+id/imageBtn"
+                android:text="相机"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <Button
+                android:id="@+id/cameraBtn"
+                android:text="摄像头"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <Button
+                android:id="@+id/contactBtn"
+                android:text="联系人"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+            <Button
+                android:id="@+id/emailBtn"
+                android:text="邮件"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

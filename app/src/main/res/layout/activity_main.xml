@@ -9,8 +9,7 @@
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:columnCount="3"
-        >
+        android:columnCount="3">
 
         <Button
             android:id="@+id/handler1"
@@ -31,63 +30,90 @@
             android:text="stop"
 
             />
+
         <Button
             android:id="@+id/btn3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="hprose测试"
+            android:text="生命周期"
 
             />
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/btn4"
-            android:text="test"
-            />
-
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="test" />
+
+        <Button
             android:id="@+id/btnKotlin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Kotlin测试" />
 
-        <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
             android:id="@+id/btnReactNative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="React Native测试" />
 
-        <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
             android:id="@+id/btnReactNative2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="React Activity" />
 
-        <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
             android:id="@+id/handlerActivityBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Handler Activity" />
 
-        <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
             android:id="@+id/uiBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="UI Test" />
 
-        <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
             android:id="@+id/carouseBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Carouse" />
+
+        <Button
+            android:id="@+id/composeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compose" />
+
+        <Button
+            android:id="@+id/composeBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compose2" />
+
+        <Button
+            android:id="@+id/intentBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="常用Intent" />
+        <Button
+            android:id="@+id/serviceBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Service测试" />
 
     </GridLayout>
 
     <com.lqd.androidpractice.view.RadiusProgressBar
         android:id="@+id/progress_bar"
-        android:layout_marginTop="100dp"
         android:layout_width="100dp"
         android:layout_height="8dp"
         android:layout_marginStart="5dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="19dp"
-        android:background="@android:color/transparent"
-        />
+        android:background="@android:color/transparent" />
 
     <ImageView
         android:id="@+id/v_1"
@@ -96,7 +122,6 @@
         android:layout_height="2dp"
         android:layout_marginTop="180dp"
 
-        android:background="@drawable/order_shape_line_gray"
-        />
+        android:background="@drawable/order_shape_line_gray" />
 
 </FrameLayout>

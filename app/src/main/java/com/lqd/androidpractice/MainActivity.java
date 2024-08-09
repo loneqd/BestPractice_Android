@@ -21,8 +21,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.lqd.androidpractice.activity.IntentExampleActivity;
 import com.lqd.androidpractice.activity.UIExampleActivity;
 import com.lqd.androidpractice.lifecycle.LaunchActivity1;
+import com.lqd.androidpractice.services.HelloService;
 import com.lqd.androidpractice.view.RadiusProgressBar;
 import com.lqd.base.activity.BaseActivity;
 import com.lqd.rn.activity.MyReactActivity;
@@ -190,6 +192,25 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.carouseBtn).setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, com.lqd.androidpractice.activity.CarouseActivity.class);
             MainActivity.this.startActivity(intent);
+        });
+        findViewById(R.id.composeBtn).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, com.lqd.androidpractice.activity.ComposeExample1Activity.class);
+            MainActivity.this.startActivity(intent);
+        });
+
+        findViewById(R.id.composeBtn2).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, com.lqd.androidpractice.activity.ComposeExample1Activity.class);
+            MainActivity.this.startActivity(intent);
+        });
+
+        findViewById(R.id.intentBtn).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, IntentExampleActivity.class);
+            MainActivity.this.startActivity(intent);
+        });
+
+        findViewById(R.id.serviceBtn).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, HelloService.class);
+            MainActivity.this.startService(intent);
         });
 
 

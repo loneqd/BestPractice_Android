@@ -1,5 +1,6 @@
 package com.lqd.androidpractice.kotlin
 
+
 object Example1 {
 
 

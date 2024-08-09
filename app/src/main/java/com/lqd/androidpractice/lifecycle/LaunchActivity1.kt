@@ -7,6 +7,8 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import androidx.lifecycle.LifecycleOwner
+import com.lqd.androidpractice.databinding.ActivityLaunch1Binding
 import com.lqd.androidpractice.R
 
 /**
@@ -14,12 +16,26 @@ import com.lqd.androidpractice.R
  */
 class LaunchActivity1 : BaseLaunchActivity() {
 
+    private lateinit var binding: ActivityLaunch1Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_launch1)
+        ActivityLaunch1Binding.inflate(layoutInflater).apply {
+            binding = this
+            setContentView(root)
+        }
+//        setContentView(R.layout.activity_launch1)
+
+        binding.la1Textview.text = "hahahaha"
+
+
+
+
 
         findViewById<Button>(R.id.btn1).setOnClickListener {
-            startActivity(Intent(this@LaunchActivity1, LaunchActivity2::class.java))
+            startActivity(Intent(this@LaunchActivity1, LaunchActivity2::class.java).apply {
+                putExtra("param1", "aaaaa")
+            })
         }
 
 //        findViewById<TextView>(R.id.ah_textview).addTextChangedListener(object : TextWatcher {

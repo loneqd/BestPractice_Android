@@ -1,10 +1,17 @@
 package com.lqd.androidpractice.kotlin.collections
 
 fun main() {
+    val numberOfAdults = "20"
+    val numberOfKids = "30"
+    val total = numberOfAdults.toInt() + numberOfKids.toInt()
+    println("The total party size is: $total")
 
-    testFind()
-    testFirst()
-    testFirstOrNull()
+
+
+
+//    testFind()
+//    testFirst()
+//    testFirstOrNull()
 }
 
 private fun testFind() {
