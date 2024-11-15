@@ -104,6 +104,22 @@
             android:layout_height="wrap_content"
             android:text="Service测试" />
 
+        <Button
+            android:id="@+id/anim1Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anim1" />
+        <Button
+            android:id="@+id/anim2Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anim2" />
+        <Button
+            android:id="@+id/anim3Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ConstraintLayout Anim" />
+
     </GridLayout>
 
     <com.lqd.androidpractice.view.RadiusProgressBar

@@ -23,14 +23,6 @@ public class MainApplication extends RNApplication {
 
     }
 
-    public void test(List<ReplaceStrEntity> replaceStr) {
-        new TestKotlin().test(replaceStr);
-
-        TestKotlin.Companion.getStaticName();
-        Log.d(TAG, "" + TestKotlin.LENGTH);
-
-    }
-
 //    private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
 //        @Override
 //        public boolean getUseDeveloperSupport() {

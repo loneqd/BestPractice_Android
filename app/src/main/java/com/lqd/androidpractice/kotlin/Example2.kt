@@ -1,0 +1,3 @@
+object Example {
+    fun foo(){}
+}

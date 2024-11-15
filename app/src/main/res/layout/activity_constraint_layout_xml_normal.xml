@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraint_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.4"
+        android:layout_height="0dp"
+        android:background="@android:color/holo_red_dark"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:padding="10dp"
+        android:text="经过许多个冬天之后，我才渐渐明白自己再躲不过雪，无论我残缩在屋子里，还是远在冬天的另一个地方，纷纷扬扬的雪，都会落在我正经历的一段岁月里。当一个人的岁月像荒野一样敞开时，他便再无法照管好自己。就像现在，我紧围着火炉，努力想烤热自己。我的一根骨头．却露在屋外的寒风中，隐隐作疼。那是我多年前冻坏的一根骨头，我再不能像捡一根牛骨头一样，把它捡回到火炉旁烤熟。它永远地冻坏在那段天亮前的雪路上了。那个冬天我十四岁，赶着牛车去沙漠里拉柴禾。那时一村人都是靠长在沙漠里的一种叫梭梭的灌木取暖过冬。因为不断砍挖，有柴禾的地方越来越远。往往要用一天半夜时间才能拉回一车柴禾。每次拉柴禾，都是母亲半夜起来做好饭，装好水和馍馍，然后叫醒我。有时父亲也会起来帮我套好车。我对寒冷的认识是从那些夜晚开始的。 "
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="@+id/image_view"
+        app:layout_constraintLeft_toRightOf="@+id/image_view"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+    <Button
+        android:id="@+id/recover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="恢复"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

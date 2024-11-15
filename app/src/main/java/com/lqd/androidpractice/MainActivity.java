@@ -1,6 +1,7 @@
 package com.lqd.androidpractice;
 
 import android.animation.ObjectAnimator;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -23,6 +24,9 @@ import androidx.annotation.NonNull;
 
 import com.lqd.androidpractice.activity.IntentExampleActivity;
 import com.lqd.androidpractice.activity.UIExampleActivity;
+import com.lqd.androidpractice.anim.Anim2ExampleActivity;
+import com.lqd.androidpractice.anim.AnimExampleActivity;
+import com.lqd.androidpractice.anim.ConstraintLayoutXmlAnimActivity;
 import com.lqd.androidpractice.lifecycle.LaunchActivity1;
 import com.lqd.androidpractice.services.HelloService;
 import com.lqd.androidpractice.view.RadiusProgressBar;
@@ -213,7 +217,30 @@ public class MainActivity extends BaseActivity {
             MainActivity.this.startService(intent);
         });
 
+        findViewById(R.id.anim1Btn).setOnClickListener(view -> {
+            goAnim();
+        });
+        findViewById(R.id.anim2Btn).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, AnimExampleActivity.class);
+            //分解动画
+            Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle();
+            MainActivity.this.startActivity(intent, bundle);
+        });
 
+
+        findViewById(R.id.anim3Btn).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, ConstraintLayoutXmlAnimActivity.class);
+            MainActivity.this.startActivity(intent);
+        });
+
+
+
+    }
+
+    private void goAnim() {
+        Intent intent = new Intent(MainActivity.this, Anim2ExampleActivity.class);
+        MainActivity.this.startActivity(intent);
+        overridePendingTransition(R.anim.activity_bottom_to_top_enter, R.anim.fade_out);//5.0以前的转场动画
     }
 
     private void interval() {

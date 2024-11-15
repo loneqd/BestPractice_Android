@@ -1,5 +1,7 @@
 package com.lqd.androidpractice.kotlin
 
+import kotlin.math.log
+
 
 object Example1 {
 
@@ -118,4 +120,63 @@ class Car(val wheels: List<Wheel>) {
     fun unlockDoor(key: String): Boolean {
         return true
     }
+}
+
+class Person(val name: String, var age: Int) {
+    val isAudlt: Boolean
+        get() {
+            return age >= 18
+        }
+
+    val isAudlt2 = age >= 18
+
+    var sexy: Int = 0
+        private set(value: Int) {
+            println(value)
+            field = value
+        }
+}
+
+abstract class F1() {
+    abstract fun foo()
+    fun go() {
+        println("go")
+    }
+}
+
+class F1Child : F1() {
+    override fun foo() {
+
+    }
+
+}
+
+open class F2() {
+
+    fun f2() {
+        println("f2")
+    }
+
+    open fun walk() {}
+}
+
+class F2Child: F2() {
+
+    override fun walk() {
+        super.walk()
+    }
+}
+
+
+class A {
+    val name = "A"
+    fun foo() = 1
+
+    //inner代表B是A的内部类
+    inner class B {
+        val a = name
+    }
+}
+fun main() {
+    println(Person("Alice", 29).isAudlt2)
 }

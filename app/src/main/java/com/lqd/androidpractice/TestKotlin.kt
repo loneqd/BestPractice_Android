@@ -14,16 +14,7 @@ import android.util.Log
 
 class TestKotlin {
 
-    private var replaceStr1 = mutableListOf<ReplaceStrEntity>()
 
-    fun test(replaceStr: List<ReplaceStrEntity>) {
-        replaceStr?.let {
-            replaceStr1.addAll(replaceStr)
-            Log.d("======", "======")
-        }
-
-
-    }
 
     companion object {
         var name:String = "zhangsan"

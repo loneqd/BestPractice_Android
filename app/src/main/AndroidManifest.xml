@@ -70,10 +70,20 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="HardcodedDebugMode">
+        <activity
+            android:name=".anim.ConstraintLayoutXmlAnimActivity"
+            android:exported="false" />
+        <activity
+            android:name=".anim.Anim2ExampleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".anim.AnimExampleActivity"
+            android:exported="false" />
+
         <service
             android:name=".services.HelloService"
             android:enabled="true"
-            android:exported="false"></service>
+            android:exported="false" />
 
         <activity
             android:name=".activity.IntentExampleActivity"
