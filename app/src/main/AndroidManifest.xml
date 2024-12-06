@@ -71,6 +71,11 @@
         android:usesCleartextTraffic="true"
         tools:ignore="HardcodedDebugMode">
         <activity
+            android:name=".activity.ScrollingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".anim.ConstraintLayoutXmlAnimActivity"
             android:exported="false" />
         <activity

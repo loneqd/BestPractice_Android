@@ -23,6 +23,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.lqd.androidpractice.activity.IntentExampleActivity;
+import com.lqd.androidpractice.activity.ScrollingActivity;
 import com.lqd.androidpractice.activity.UIExampleActivity;
 import com.lqd.androidpractice.anim.Anim2ExampleActivity;
 import com.lqd.androidpractice.anim.AnimExampleActivity;
@@ -230,6 +231,11 @@ public class MainActivity extends BaseActivity {
 
         findViewById(R.id.anim3Btn).setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ConstraintLayoutXmlAnimActivity.class);
+            MainActivity.this.startActivity(intent);
+        });
+
+        findViewById(R.id.drawableBtn).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, ScrollingActivity.class);
             MainActivity.this.startActivity(intent);
         });
 

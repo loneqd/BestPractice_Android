@@ -23,7 +23,7 @@ fun main() {
 }
 
 /**
- * 相当于静态对象，里面的函数都是静态的
+ * 单例模式，object关键字
  */
 object DoAuth {                                                 //1
     fun takeParams(username: String, password: String) {        //2
@@ -33,7 +33,7 @@ object DoAuth {                                                 //1
 
 
 class BigBen {
-    //伴生对象
+    //伴生对象 静态内部类的单例对象
     companion object Bonger {                   //2
         fun getBongs(nTimes: Int) {             //3
             for (i in 1 .. nTimes) {

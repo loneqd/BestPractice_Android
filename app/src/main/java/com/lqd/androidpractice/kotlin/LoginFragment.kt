@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.lqd.androidpractice.R
+import java.util.logging.Logger
 
 
 class TestXX():Fragment(){}
@@ -33,6 +34,7 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         userEditText = view.findViewById(R.id.editText1)
+        Logger.getLogger(TAG).info("onViewCreated")
 
         //单一抽象方法转换
         view.findViewById<Button>(R.id.btnLogin).setOnClickListener {
